@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - deployment.yml
+
+configMapGenerator:
+  - files:
+      - ./application.yml
+    name: myapp
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+transformers:
+  - ./annotator.yml
