@@ -6,17 +6,16 @@ metadata:
     config.kubernetes.io/function: |
       container:
         image: registry.cn-hangzhou.aliyuncs.com/k8ops/kustomize-functions:checksumer-v0.1.0
-
 spec:
   checksum:
-    - key: checksum/config
-      target:
-        kind: ConfigMap
-        name: myapp
+  - key: checksum/config
+    target:
+      kind: ConfigMap
+      name: myapp
   selectors:
-    - target:
-        kind: Deployment
-        name: myapp
-      fieldSpec:
-        path: spec/template/metadata/annotations
-        create: true
+  - target:
+      kind: Deployment
+      name: myapp
+    fieldSpec:
+      path: spec/template/metadata/annotations
+      create: true

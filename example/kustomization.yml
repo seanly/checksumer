@@ -13,4 +13,4 @@ generatorOptions:
   disableNameSuffixHash: true
 
 transformers:
-  - ./annotator.yml
+  - ./checksumer.yml
